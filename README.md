@@ -1,4 +1,4 @@
-#Express.js STarter package
+#Express.js Starter package
 ##Features
 1. Handlebars templates
 2. Gulp asset management with SASS
