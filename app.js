@@ -25,7 +25,7 @@ app.use('/users', users);
 
 // Set up app wide variables
 app.locals.currentYear = new Date().getFullYear();
-app.locals.companyName = 'calder.io';
+app.locals.companyName = process.env.COMPANY_NAME;
 
 /// catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -12,7 +12,8 @@
 1. Clone repository
 2. CD into new folder
 3. Run npm install
-4. Run gulp
-5. npm start or nodemon start
+4. Rename env.sample to .env and set your variables
+5. Run gulp
+6. npm start or nodemon start
 
 
