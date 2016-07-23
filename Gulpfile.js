@@ -88,16 +88,8 @@ gulp.task('iescripts:compress', function() {
     .pipe($.size({title: 'scripts:compress'}));
 });
 
-gulp.task('ie2scripts:move', function() {
-  return gulp.src([
-      'public/assets/src/ie/js/selectivizr-min.js'
-    ])
-    .pipe(gulp.dest('public/assets/dist/ie/js'))
-    .pipe($.size({title: 'scripts:compress'}));
-});
-
 gulp.task('scripts', function(next) {
-  return runSequence('scripts:compress','iescripts:compress', 'ie2scripts:move', next);
+  return runSequence('scripts:compress', next);
 });
 
 gulp.task('fonts:move', function() {
@@ -122,7 +114,6 @@ gulp.task('default', function() {
   gulp.start('build', function() {
     gulp.watch('public/assets/vendor/js/**/*.js', ['scripts']);
     gulp.watch('public/assets/src/js/**/*.js', ['scripts']);
-    gulp.watch('public/assets/src/ie/js/**/*.js', ['scripts']);
     gulp.watch('public/assets/vendor/css/**/*.css', ['styles']);
     gulp.watch('public/assets/vendor/scss/**/*.scss', ['styles']);
     gulp.watch('public/assets/src/scss/**/*.scss', ['styles']);
