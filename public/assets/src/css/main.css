@@ -1,6 +1,28 @@
 body {
-  padding: 50px;
-  font: 20px "Lucida Grande", Helvetica, Arial, sans-serif; }
+  padding-top: 50px; }
 
 a {
   color: #00B7FF; }
+
+/* Sticky footer styles
+-------------------------------------------------- */
+* {
+  margin: 0; }
+
+html, body {
+  height: 100%; }
+
+.wrapper {
+  min-height: 100%;
+  margin-bottom: -70px; }
+
+.wrapper:after {
+  content: '';
+  display: block; }
+
+.footer, .wrapper:after {
+  height: 70px; }
+
+.footer {
+  padding: 20px 0;
+  text-align: center; }

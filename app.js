@@ -10,7 +10,7 @@ var users = require('./routes/users');
 
 var app = express();
 
-hbs.registerPartial('partial', fs.readFileSync(__dirname + '/views/partial.hbs', 'utf8'));
+
 hbs.registerPartials(__dirname + '/views/partials');
 
 // set the view engine to use handlebars
@@ -22,6 +22,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/users', users);
+
+// Set up app wide variables
+app.locals.currentYear = new Date().getFullYear();
+app.locals.companyName = 'calder.io';
 
 /// catch 404 and forward to error handler
 app.use(function(req, res, next) {
