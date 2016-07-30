@@ -10,6 +10,24 @@ var users = require('./routes/users');
 
 var app = express();
 
+//DB Config
+var dbURL = process.env.DB_CONFIG;
+var mongoose = require('mongoose');
+mongoose.connect(dbURL);
+
+//Passport config
+var secretkey = process.env.SECRET_KEY;
+var passport = require('passport');
+var expressSession = require('express-session');
+app.use(expressSession({
+    secret: secretkey,
+    resave: true,
+    saveUninitialized: true
+}));
+app.use(passport.initialize());
+app.use(passport.session());
+var initPassport = require('./passport/init');
+initPassport(passport);
 
 hbs.registerPartials(__dirname + '/views/partials');
 
